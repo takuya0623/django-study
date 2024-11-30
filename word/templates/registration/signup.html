@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} ユーザー登録画面 {% endblock %}
+
+{% block content %}
+  <section>
+    <h1>ユーザー登録画面</h1>
+
+    <form method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+        <label for="id_username" class="form-label">ユーザー名</label><br>
+        {{ form.username}}
+      </div>
+      <div class="mb-3">
+        <label for="id_email" class="form-label">メールアドレス</label><br>
+        {{ form.email}}
+      </div>
+      <div class="mb-3">
+        <label for="id_password1" class="form-label">パスワード</label><br>
+        {{ form.password1}}
+      </div>
+      <div class="mb-3">
+        <label for="id_password2" class="form-label">パスワード(確認用)</label><br>
+        {{ form.password2}}
+      </div>
+      <button type="submit" class="btn btn-primary">登録</button>
+    </form>
+  </section>
+{% endblock %}

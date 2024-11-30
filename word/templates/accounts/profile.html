@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} プロフィール画面 {% endblock %}
+
+{% block content %}
+  <section>
+    <h1>プロフィール画面</h1>
+      {% csrf_token %}
+      <div class="mb-3">
+        <p> ユーザー名: {{ user.username}}</p>
+        <p> メールアドレス: {{ user.email}}</p>
+      </div>
+    <form action="{% url 'logout' %}" method="post">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary">ログアウト</button>
+    </form>
+  </section>
+{% endblock %}
